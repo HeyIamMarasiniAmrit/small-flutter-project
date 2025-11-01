@@ -4,13 +4,28 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+# 🏆 Score App
 
-A few resources to get you started if this is your first Flutter project:
+A simple and fun Flutter project built using **Flutter** and **Dart** to track and update scores in real-time!  
+This project was created to improve my **Flutter development skills** and explore the basics of UI design, state management, and interaction handling.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Features
+- Add or subtract scores with buttons  
+- Clean and responsive UI  
+- Built using Flutter & Dart  
+- Beginner-friendly project  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 Purpose
+I built this app as a **learning and practice project** — to get hands-on experience with Flutter widgets, layouts, and event handling while keeping it fun and simple.
+
+## 💻 Tech Stack
+- Flutter  
+- Dart  
+
+## 📱 Screenshots
+(You can add screenshots here later)
+
+## 🧩 How to Run
+1. Clone this repo  
+   ```bash
+   git clone https://github.com/yourusername/score_app.git
