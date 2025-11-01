@@ -23,7 +23,7 @@ I built this app as a **learning and practice project** — to get hands-on expe
 - Dart  
 
 ## 📱 Screenshots
-(You can add screenshots here later)
+<img width="1866" height="928" alt="Image" src="https://github.com/user-attachments/assets/0a9ce845-f611-46d0-9a24-4eacb99c4f98" />
 
 ## 🧩 How to Run
 1. Clone this repo  
