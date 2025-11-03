@@ -4,6 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 # 🏆 ToDoApp 
+<img width="1823" height="683" alt="Image" src="https://github.com/user-attachments/assets/46f01ab9-6e34-498a-a968-7d4edf892f11" />
 # 🏆 Score App
 
 A simple and fun Flutter project built using **Flutter** and **Dart** to track and update scores in real-time!  
