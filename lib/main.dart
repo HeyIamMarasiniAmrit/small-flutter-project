@@ -1,103 +1,62 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const ScoreApp());
-}
-
-class ScoreApp extends StatelessWidget {
-  const ScoreApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+void main() => runApp(const MaterialApp(
+      title: "TODO APP",
+      home: TODOAPP(),
       debugShowCheckedModeBanner: false,
-      title: "ScoreApp",
-      home: ScoreHome(),
-    );
-  }
-}
+    ));
 
-class ScoreHome extends StatefulWidget {
-  const ScoreHome({super.key});
+class TODOAPP extends StatefulWidget {
+  const TODOAPP({super.key});
 
   @override
-  State<ScoreHome> createState() => _ScoreHomeState();
+  State<TODOAPP> createState() => _TODOAPPState();
 }
 
-class _ScoreHomeState extends State<ScoreHome> {
-  int score = 0; // variable to hold score
+class _TODOAPPState extends State<TODOAPP> {
+  String value = '';
+  var listToDo = [
+    '',
+  ];
+  addToDo(String item) {
+    setState(() {
+      listToDo.add(item);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Score App"),
-        centerTitle: true,
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.restore_outlined),
-        onPressed: () {},
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Center(
-            child: Text(
-              "Score is",
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Center(
-            child: Text(
-              "$score",
-              style: const TextStyle(
-                color: Colors.green,
-                fontSize: 55,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    score++; // increase score
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                ),
-                child: const Text(
-                  'Increase',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const SizedBox(width: 20),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    score--; // decrease score
-                  });
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                ),
-                child: const Text(
-                  'Decrease',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ],
-          )
-        ],
-      ),
-    );
+        appBar: AppBar(
+          title: const Text("TODO APP"),
+          centerTitle: true,
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            addToDo(value);
+          },
+          child: const Icon(Icons.add),
+        ),
+        body: ListView.builder(
+            itemCount: listToDo.length,
+            itemBuilder: (context, index) {
+              return index == 0
+                  ? Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: TextFormField(
+                        decoration: const InputDecoration(hintText: "Add Item"),
+                        onChanged: (val) {
+                          value = val;
+                        },
+                      ),
+                    )
+                  : ListTile(
+                      leading: const Icon(Icons.work),
+                      title: Text(
+                        listToDo[index],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    );
+            }));
   }
 }
